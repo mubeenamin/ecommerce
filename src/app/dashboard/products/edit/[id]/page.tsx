@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { useRouter, useParams } from "next/navigation";
+import Image from "next/image";
 import { useProducts } from "@/context/ProductContext";
 import { useCategories } from "@/context/CategoryContext";
-import styles from "../../form.module.css";
+import styles from "../../../form.module.css";
 
 export default function EditProductPage() {
     const router = useRouter();
@@ -131,7 +132,13 @@ export default function EditProductPage() {
                     />
                     {preview && (
                         <div style={{ marginTop: '10px' }}>
-                            <img src={preview} alt="Preview" style={{ maxWidth: '200px', borderRadius: '8px' }} />
+                            <Image
+                                src={preview}
+                                alt="Preview"
+                                width={200}
+                                height={200}
+                                style={{ maxWidth: '200px', height: 'auto', borderRadius: '8px' }}
+                            />
                         </div>
                     )}
                 </div>
